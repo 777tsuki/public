@@ -14638,7 +14638,7 @@ void main() {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(div, "class", "collections svelte-ehbdi1");
+    			attr_dev(div, "class", "collections svelte-jiymxv");
     			add_location(div, file$1, 45, 6, 1215);
     		},
     		m: function mount(target, anchor) {
@@ -14760,9 +14760,9 @@ void main() {
     			create_component(explain.$$.fragment);
     			t1 = space();
     			if (!src_url_equal(img.src, img_src_value = "/svg/collection/" + /*c*/ ctx[17] + ".svg")) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "class", "svelte-ehbdi1");
+    			attr_dev(img, "class", "svelte-jiymxv");
     			add_location(img, file$1, 56, 14, 1574);
-    			attr_dev(div, "class", div_class_value = "" + (null_to_empty(/*selected*/ ctx[1] == /*c*/ ctx[17] && "selected") + " svelte-ehbdi1"));
+    			attr_dev(div, "class", div_class_value = "" + (null_to_empty(/*selected*/ ctx[1] == /*c*/ ctx[17] && "selected") + " svelte-jiymxv"));
     			add_location(div, file$1, 52, 12, 1440);
     		},
     		m: function mount(target, anchor) {
@@ -14781,7 +14781,7 @@ void main() {
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (!current || dirty & /*selected*/ 2 && div_class_value !== (div_class_value = "" + (null_to_empty(/*selected*/ ctx[1] == /*c*/ ctx[17] && "selected") + " svelte-ehbdi1"))) {
+    			if (!current || dirty & /*selected*/ 2 && div_class_value !== (div_class_value = "" + (null_to_empty(/*selected*/ ctx[1] == /*c*/ ctx[17] && "selected") + " svelte-jiymxv"))) {
     				attr_dev(div, "class", div_class_value);
     			}
     		},
@@ -14937,7 +14937,7 @@ void main() {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(div, "class", "souvenirs svelte-ehbdi1");
+    			attr_dev(div, "class", "souvenirs svelte-jiymxv");
     			add_location(div, file$1, 68, 6, 1915);
     		},
     		m: function mount(target, anchor) {
@@ -15059,9 +15059,9 @@ void main() {
     			create_component(explain.$$.fragment);
     			t1 = space();
     			if (!src_url_equal(img.src, img_src_value = "/svg/souvenir/" + /*s*/ ctx[10] + ".svg")) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "class", "svelte-ehbdi1");
+    			attr_dev(img, "class", "svelte-jiymxv");
     			add_location(img, file$1, 78, 12, 2204);
-    			attr_dev(div, "class", div_class_value = "" + (null_to_empty(/*selected*/ ctx[1] == /*s*/ ctx[10] && "selected") + " svelte-ehbdi1"));
+    			attr_dev(div, "class", div_class_value = "" + (null_to_empty(/*selected*/ ctx[1] == /*s*/ ctx[10] && "selected") + " svelte-jiymxv"));
     			add_location(div, file$1, 74, 10, 2078);
     		},
     		m: function mount(target, anchor) {
@@ -15080,7 +15080,7 @@ void main() {
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (!current || dirty & /*selected*/ 2 && div_class_value !== (div_class_value = "" + (null_to_empty(/*selected*/ ctx[1] == /*s*/ ctx[10] && "selected") + " svelte-ehbdi1"))) {
+    			if (!current || dirty & /*selected*/ 2 && div_class_value !== (div_class_value = "" + (null_to_empty(/*selected*/ ctx[1] == /*s*/ ctx[10] && "selected") + " svelte-jiymxv"))) {
     				attr_dev(div, "class", div_class_value);
     			}
     		},
@@ -15138,7 +15138,7 @@ void main() {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(div, "class", "equipments svelte-ehbdi1");
+    			attr_dev(div, "class", "equipments svelte-jiymxv");
     			add_location(div, file$1, 89, 6, 2490);
     		},
     		m: function mount(target, anchor) {
@@ -15260,9 +15260,9 @@ void main() {
     			create_component(explain.$$.fragment);
     			t1 = space();
     			if (!src_url_equal(img.src, img_src_value = "/svg/equipment/" + /*s*/ ctx[10] + ".svg")) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "class", "svelte-ehbdi1");
+    			attr_dev(img, "class", "svelte-jiymxv");
     			add_location(img, file$1, 99, 12, 2781);
-    			attr_dev(div, "class", div_class_value = "" + (null_to_empty(/*selected*/ ctx[1] == /*s*/ ctx[10] && "selected") + " svelte-ehbdi1"));
+    			attr_dev(div, "class", div_class_value = "" + (null_to_empty(/*selected*/ ctx[1] == /*s*/ ctx[10] && "selected") + " svelte-jiymxv"));
     			add_location(div, file$1, 95, 10, 2655);
     		},
     		m: function mount(target, anchor) {
@@ -15281,7 +15281,7 @@ void main() {
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (!current || dirty & /*selected*/ 2 && div_class_value !== (div_class_value = "" + (null_to_empty(/*selected*/ ctx[1] == /*s*/ ctx[10] && "selected") + " svelte-ehbdi1"))) {
+    			if (!current || dirty & /*selected*/ 2 && div_class_value !== (div_class_value = "" + (null_to_empty(/*selected*/ ctx[1] == /*s*/ ctx[10] && "selected") + " svelte-jiymxv"))) {
     				attr_dev(div, "class", div_class_value);
     			}
     		},
@@ -15348,15 +15348,15 @@ void main() {
     			txt2 = element("txt");
     			t5 = text(t5_value);
     			if (!src_url_equal(img.src, img_src_value = "/svg/" + /*index*/ ctx[0] + "/" + /*selected*/ ctx[1] + ".svg")) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "class", "svelte-ehbdi1");
+    			attr_dev(img, "class", "svelte-jiymxv");
     			add_location(img, file$1, 115, 8, 3178);
-    			attr_dev(txt0, "class", "name svelte-ehbdi1");
+    			attr_dev(txt0, "class", "name svelte-jiymxv");
     			add_location(txt0, file$1, 116, 8, 3229);
-    			attr_dev(txt1, "class", "effect svelte-ehbdi1");
+    			attr_dev(txt1, "class", "effect svelte-jiymxv");
     			add_location(txt1, file$1, 117, 8, 3291);
-    			attr_dev(txt2, "class", "story svelte-ehbdi1");
+    			attr_dev(txt2, "class", "story svelte-jiymxv");
     			add_location(txt2, file$1, 118, 8, 3357);
-    			attr_dev(div, "class", "detail svelte-ehbdi1");
+    			attr_dev(div, "class", "detail svelte-jiymxv");
     			add_location(div, file$1, 110, 6, 3056);
     		},
     		m: function mount(target, anchor) {
@@ -15481,23 +15481,23 @@ void main() {
     			if (if_block2) if_block2.c();
     			t14 = space();
     			if (if_block3) if_block3.c();
-    			attr_dev(txt0, "class", txt0_class_value = "" + (null_to_empty(/*index*/ ctx[0] == "collection" && "selected") + " svelte-ehbdi1"));
+    			attr_dev(txt0, "class", txt0_class_value = "" + (null_to_empty(/*index*/ ctx[0] == "collection" && "selected") + " svelte-jiymxv"));
     			add_location(txt0, file$1, 27, 4, 731);
-    			attr_dev(txt1, "class", txt1_class_value = "" + (null_to_empty(/*index*/ ctx[0] == "souvenir" && "selected") + " svelte-ehbdi1"));
+    			attr_dev(txt1, "class", txt1_class_value = "" + (null_to_empty(/*index*/ ctx[0] == "souvenir" && "selected") + " svelte-jiymxv"));
     			add_location(txt1, file$1, 31, 4, 853);
-    			attr_dev(txt2, "class", txt2_class_value = "" + (null_to_empty(/*index*/ ctx[0] == "equipment" && "selected") + " svelte-ehbdi1"));
+    			attr_dev(txt2, "class", txt2_class_value = "" + (null_to_empty(/*index*/ ctx[0] == "equipment" && "selected") + " svelte-jiymxv"));
     			add_location(txt2, file$1, 35, 4, 971);
-    			attr_dev(txt3, "class", "svelte-ehbdi1");
+    			attr_dev(txt3, "class", "svelte-jiymxv");
     			add_location(txt3, file$1, 39, 4, 1090);
-    			attr_dev(txt4, "class", "svelte-ehbdi1");
+    			attr_dev(txt4, "class", "svelte-jiymxv");
     			add_location(txt4, file$1, 40, 4, 1109);
-    			attr_dev(txt5, "class", "svelte-ehbdi1");
+    			attr_dev(txt5, "class", "svelte-jiymxv");
     			add_location(txt5, file$1, 41, 4, 1129);
-    			attr_dev(div0, "class", "index svelte-ehbdi1");
+    			attr_dev(div0, "class", "index svelte-jiymxv");
     			add_location(div0, file$1, 26, 2, 706);
-    			attr_dev(div1, "class", "main svelte-ehbdi1");
+    			attr_dev(div1, "class", "main svelte-jiymxv");
     			add_location(div1, file$1, 43, 2, 1156);
-    			attr_dev(div2, "class", "body svelte-ehbdi1");
+    			attr_dev(div2, "class", "body svelte-jiymxv");
     			add_location(div2, file$1, 25, 0, 627);
     		},
     		l: function claim(nodes) {
@@ -15542,15 +15542,15 @@ void main() {
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (!current || dirty & /*index*/ 1 && txt0_class_value !== (txt0_class_value = "" + (null_to_empty(/*index*/ ctx[0] == "collection" && "selected") + " svelte-ehbdi1"))) {
+    			if (!current || dirty & /*index*/ 1 && txt0_class_value !== (txt0_class_value = "" + (null_to_empty(/*index*/ ctx[0] == "collection" && "selected") + " svelte-jiymxv"))) {
     				attr_dev(txt0, "class", txt0_class_value);
     			}
 
-    			if (!current || dirty & /*index*/ 1 && txt1_class_value !== (txt1_class_value = "" + (null_to_empty(/*index*/ ctx[0] == "souvenir" && "selected") + " svelte-ehbdi1"))) {
+    			if (!current || dirty & /*index*/ 1 && txt1_class_value !== (txt1_class_value = "" + (null_to_empty(/*index*/ ctx[0] == "souvenir" && "selected") + " svelte-jiymxv"))) {
     				attr_dev(txt1, "class", txt1_class_value);
     			}
 
-    			if (!current || dirty & /*index*/ 1 && txt2_class_value !== (txt2_class_value = "" + (null_to_empty(/*index*/ ctx[0] == "equipment" && "selected") + " svelte-ehbdi1"))) {
+    			if (!current || dirty & /*index*/ 1 && txt2_class_value !== (txt2_class_value = "" + (null_to_empty(/*index*/ ctx[0] == "equipment" && "selected") + " svelte-jiymxv"))) {
     				attr_dev(txt2, "class", txt2_class_value);
     			}
 
