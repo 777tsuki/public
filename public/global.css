@@ -105,3 +105,10 @@ div {
 	opacity: 1;
 	visibility: visible;
 }
+
+.equipments > div > .explain:hover,
+.souvenirs > div > .explain:hover,
+.collections > div > .explain:hover {
+	opacity: 0;
+	visibility: hidden;
+}
