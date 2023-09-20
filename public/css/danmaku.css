@@ -1,0 +1,151 @@
+body {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+    -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.danmaku {
+  display: none;
+  position: fixed;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 600px;
+}
+
+.da-battle {
+  height: 90%;
+  backdrop-filter: blur(8px);
+  margin: auto;
+  overflow: hidden;
+  border: 6px solid rgba(255, 255, 255, 0.7);
+}
+
+#da-me {
+  position: absolute;
+  background: #0f9700;
+  border-radius: 50%;
+}
+
+#da-me::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background: #c8ffe0;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  top: -5px;
+  left: -5px;
+}
+
+#da-enermy {
+  position: absolute;
+  background: lightblue;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.dan-first {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  position: absolute;
+}
+
+.dan-first>a {
+  border-radius: 100%;
+  background: rgb(253, 182, 255);
+  width: 14px;
+  height: 28px;
+}
+
+.dan-ten,
+.dan-nine,
+.dan-seven,
+.dan-six {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  position: absolute;
+}
+
+.dan-ten>a,
+.dan-nine>a,
+.dan-seven>a,
+.dan-six>a {
+  border-radius: 100%;
+  background: lightpink;
+  width: 14px;
+  height: 28px;
+}
+
+.dan-seven>a {
+  border-radius: 100%;
+  background: lightpink;
+  width: 14px;
+  height: 28px;
+}
+
+.dan-eight {
+  width: 14px;
+  height: 14px;
+  background: rgb(255, 126, 126);
+  border-radius: 100%;
+  position: absolute;
+}
+
+#da-timer {
+  color: white;
+}
+
+#da-timer::after {
+  content: 'ms';
+}
+
+#da-fps {
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#da-fps::before {
+  content: 'fps:';
+}
+
+#da-count {
+  color: white;
+  float: right;
+}
+
+s {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  * {
+    touch-action: pan-x, pan-y;
+  }
+  .da-battle {
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    top: 5%;
+  }
+}

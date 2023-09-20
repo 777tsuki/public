@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="/css/danmaku.css">
+</head>
+
+<body>
+  <div class="da-battle">
+    <c id="da-timer"></c>
+    <c id="da-count"></c>
+    <c id="da-fps"></c>
+    <a id="da-me"></a>
+    <a id="da-enermy"></a>
+  </div>
+
+  <script src="/js/jq.js"></script>
+  <script>
+    let sUserAgent = navigator.userAgent;
+    let mobile = (sUserAgent.indexOf('Android') > -1 || sUserAgent.indexOf('iPhone') > -1 || sUserAgent.indexOf('iPad') > -1 || sUserAgent.indexOf('iPod') > -1 || sUserAgent.indexOf('Symbian') > -1);
+    const html = {
+      width: Number($('body').css('width').slice(0, -2)),
+      height: Number($('body').css('height').slice(0, -2))
+    }
+    const battleBox = {
+      width: 480,
+      height: 720,
+      zoom: mobile ? html.width / 520 : html.height / 760
+    }
+    let fps = mobile ? 25 : 8;
+    const ops = {
+      s: fps / 16,
+      w: battleBox.width / 480,
+      l: 12000,
+      check: 300,
+      super: false,
+      floatFps: !mobile
+    }
+    class elf { }
+    const me = {
+      e: '#da-me',
+      x: 0,
+      y: 150,
+      size: 10,
+      slow: 1.7,
+      fast: 3.4,
+      move: {
+        w: false,
+        s: false,
+        a: false,
+        d: false,
+        slow: false
+      }
+    }
+    const enermy = {
+      e: '#da-enermy',
+      x: 0,
+      y: -150,
+      size: 20,
+      data: {},
+      skill: {
+        first: [{
+          type: 'shunt',
+          style: 'six'
+        }, {
+          type: 'shunt',
+          style: 'seven'
+        }],
+        second: [{
+          type: 'shunt',
+          style: 'six'
+        }, {
+          type: 'shot',
+          style: 'first',
+          target: 'me'
+        }],
+        third: [{
+          type: 'shunt',
+          style: 'eight'
+        }, {
+          type: 'follow',
+          style: 'walk'
+        }],
+        forth: [{
+          type: 'shunt',
+          style: 'nine'
+        }, {
+          type: 'shunt',
+          style: 'ten'
+        }]
+      },
+      onskill: ['first', 'second', 'third', 'forth'],
+      slow: 1.3,
+      fast: 3.9,
+      move: {
+        w: false,
+        s: false,
+        a: false,
+        d: false,
+        slow: false,
+        able: true
+      }
+    }
+    const action = {
+      shot: (from, style, to) => {
+        let dX = to.x - from.x,
+          dY = to.y - from.y;
+        danmaku.on.add({
+          rX: dX / d(from, to),
+          rY: dY / d(from, to),
+          style: style,
+          x: from.x,
+          y: from.y,
+          r: -Math.atan2(dX, dY),
+          clear: false
+        });
+      },
+      follow: (from, sty, to) => {
+        let dX = to.x - from.x;
+        let dY = to.y - from.y;
+        from.x += style[sty].speed * ops.s * dX / d(from, to);
+        from.y += style[sty].speed * ops.s * dY / d(from, to);
+      },
+      shunt: (from, sty) => {
+        if (!from.data[sty]) from.data[sty] = 0;
+        if (!style[sty].offset) style[sty].offset = { x: 0, y: 0 };
+        if (!style[sty].translate) {
+          from.data[sty] += 0;
+        }
+        else {
+          from.data[sty] += style[sty].translate;
+        }
+        let n = style[sty].num,
+          rotate = style[sty].rotate,
+          off = style[sty].offset,
+          offset = {
+            x: off.x ? off.x : 0,
+            y: off.y ? off.y : 0,
+          },
+          r = 2 * Math.PI / n,
+          rX = Math.sin(from.data[sty]),
+          rY = Math.cos(from.data[sty]),
+          rX0, rY0
+        for (let i = 0; i < n; i++) {
+          let obj = {
+            rX: rX,
+            rY: rY,
+            style: sty,
+            x: from.x + offset.x,
+            y: from.y + offset.y,
+            r: Math.atan2(rX, rY) + (1 - 3 * (n % 2)) * i * r - 2 * from.data[sty],
+            clear: false
+          }
+          danmaku.on.add(obj);
+          rX0 = rX, rY0 = rY;
+          rX = rX0 * Math.cos(r) + rY0 * Math.sin(r);
+          rY = Math.cos(r) / rY0 - rX * rX0 / rY0;
+        }
+        from.data[sty] += rotate;
+      }
+    }
+    const danmaku = {
+      on: {
+        add: obj => {
+          $('.da-battle').append(`<d class="dan-${obj.style}"><a></a></d>`);
+          danmaku[obj.style].push(obj);
+          obj.r && $(`.dan-${obj.style}`).eq(danmaku[obj.style].length - 1).children('a').css({ transform: `rotateZ(${obj.r}rad)` });
+        },
+        move: (obj, box, i) => {
+          obj.x += obj.rX * style[obj.style].speed * ops.s;
+          obj.y += obj.rY * style[obj.style].speed * ops.s;
+          $(`.dan-${obj.style}`).eq(i).css({
+            top: battleBox.height / 2 + obj.y - box.size / 2,
+            left: battleBox.width / 2 + obj.x - box.size / 2
+          });
+          border.clear(obj);
+        },
+        reload: _ => {
+          for (let i in style) danmaku[i] = [];
+          $('.da-battle>d').remove();
+          enermy.data = {};
+        },
+        clear: (obj, skill) => obj.skill[skill].forEach((da, i) => Interval.clear(`${da.style}_${i}`)),
+        active: (obj, skill) => {
+          let das = obj.skill[skill];
+          das.forEach((da, i) => {
+            Interval.add(`${da.style}_${i}`, _ => action[da.type](obj, da.style, me), style[da.style].rate);
+          })
+        }
+      }
+    }
+    const border = {
+      limit: obj => {
+        if (obj.y > battleBox.height / 2) obj.y = battleBox.height / 2;
+        if (obj.y < -battleBox.height / 2) obj.y = -battleBox.height / 2;
+        if (obj.x > battleBox.width / 2) obj.x = battleBox.width / 2;
+        if (obj.x < -battleBox.width / 2) obj.x = -battleBox.width / 2;
+      },
+      clear: obj => {
+        let s = style[obj.style].box.size;
+        if (Math.abs(obj.y) > battleBox.height / 2 + s || Math.abs(obj.x) > battleBox.width / 2 + s) obj.clear = true;
+      }
+    }
+    const Interval = {
+      add: (k, f, t, timer) => {
+        if (k in Interval);
+        else {
+          Interval[k] = setInterval(f, t);
+        }
+      },
+      clear: k => {
+        clearInterval(Interval[k]);
+        delete Interval[k];
+      },
+      clearAll: _ => {
+        for (let i in Interval) ['add', 'clear', 'clearAll'].indexOf(i) < 0 && Interval.clear(i);
+      }
+    }
+    const shape = {
+      oval: (obj, box, i) => {
+        let c = Math.sqrt(Math.pow(box.a, 2) - Math.pow(box.b, 2));
+        if (d(me, { x: obj.x + obj.rX * c, y: obj.y + obj.rY * c }) + d(me, { x: obj.x - obj.rX * c, y: obj.y - obj.rY * c }) < box.a * 2) return true;
+      },
+      round: (obj, box, i) => {
+        return d(obj, me) < (me.size + box.size) / 2;
+      }
+    }
+    const core = _ => {
+      Move(me);
+      Move(enermy);
+      if (ops.timer < 0) {
+        ops.timer = ops.l;
+        next();
+      }
+      else ops.timer = parseInt(ops.timer - fps);
+      let result = collision(enermy);
+      for (let type in danmaku) {
+        type != 'on' && danmaku[type].forEach((obj, i) => {
+          if (obj.clear) {
+            danmaku[type].splice(i, 1);
+            $(`.dan-${obj.style}`).eq(i).remove();
+          }
+          else {
+            let box = style[obj.style].box;
+            danmaku.on.move(obj, box, i);
+            if (Math.abs(obj.x - me.x) < (me.size + box.size) / 2 || Math.abs(obj.y - me.y) < (me.size + box.size) / 2) {
+              shape[box.shape](obj, box, i) && result++;
+            }
+          }
+        });
+      }
+      result && die();
+    }
+    const check = _ => {
+      $('#da-timer').text(ops.timer);
+      if (ops.floatFps) {
+        let time = new Date().getTime(),
+          dTime = time - ops.lastTime,
+          dTimer = ops.lastTimer - ops.timer;
+        if (dTime > ops.check || dTimer < ops.check) {
+          if (dTime > ops.check) {
+            let n = Math.sqrt(dTime / ops.check)
+            fps *= n
+            ops.s *= n
+          }
+          if (dTimer < ops.check) {
+            let n = Math.sqrt(ops.check / dTimer)
+            fps *= n
+            ops.s *= n
+          }
+        }
+        else {
+          fps = 1000 / (1000 / fps + 3);
+          ops.s = fps / 16;
+        }
+        Interval.clear('core');
+        Interval.add('core', core, fps);
+        ops.lastTimer = ops.timer
+        ops.lastTime = time;
+      }
+      let sum = 0;
+      for (let i in danmaku) if (i != 'on') sum += danmaku[i].length;
+      ops.count = sum;
+      $('#da-count').text(ops.count);
+      $('#da-fps').text(Math.round(1000 / fps));
+    }
+
+    document.addEventListener("touchmove", function (e) { e.preventDefault() }, { passive: false });
+    $(document).on('keydown', e => keypress(e, true));
+    $(document).on('keyup', e => keypress(e, false));
+    $('body').on('touchstart', function (event) {
+      if (event.touches.length == 1) {
+        let x0 = event.touches[0].pageX,
+          y0 = event.touches[0].pageY,
+          x1 = me.x,
+          y1 = me.y;
+        $(document).on('touchmove', e => {
+          let dx = e.touches[0].pageX - x0,
+            dy = e.touches[0].pageY - y0;
+          me.x = x1 + dx;
+          me.y = y1 + dy;
+        });
+        $(document).on('touchend', _ => {
+          $(document).off('touchmove');
+          $(document).off('touchend');
+        })
+      }
+    });
+
+    function keypress(e, b) {
+      if (e.keyCode == 87 || e.keyCode == 38) me.move.w = b;
+      if (e.keyCode == 83 || e.keyCode == 40) me.move.s = b;
+      if (e.keyCode == 65 || e.keyCode == 37) me.move.a = b;
+      if (e.keyCode == 68 || e.keyCode == 39) me.move.d = b;
+      if (e.keyCode == 16) me.move.slow = b;
+      if (b && e.keyCode == 32);
+    }
+    function initialization() {
+      ops.timer = ops.l
+      $('.da-battle').css('filter', '');
+      $('.da-battle').css(battleBox);
+      $('#da-me').css({
+        width: me.size,
+        height: me.size
+      });
+      me.x = 0;
+      me.y = battleBox.height / 4;
+      $('#da-enermy').css({
+        width: enermy.size,
+        height: enermy.size,
+      });
+      enermy.x = 0;
+      enermy.y = -battleBox.height / 4;
+      danmaku.on.reload();
+      ops.lastTimer = ops.l + ops.check;
+      ops.lastTime = new Date().getTime();
+      Interval.add('core', core, fps);
+      Interval.add('check', check, ops.check);
+      setTimeout(_ => danmaku.on.active(enermy, enermy.onskill[0]), 2000);
+      for (let i in me.move) me.move[i] = false;
+    }
+    function d(from, to) {
+      return Math.sqrt(Math.pow((from.x - to.x), 2) + Math.pow((from.y - to.y), 2))
+    }
+    function collision(obj) {
+      return d(obj, me) < (me.size + enermy.size) / 2;
+    }
+    function die() {
+      $('.da-battle').css('filter', 'hue-rotate(180deg)');
+      Interval.clearAll();
+      setTimeout(_ => initialization(), 2000);
+    }
+    function Move(obj) {
+      let s = obj.move.slow ? obj.slow : obj.fast;
+      obj.y = obj.y - s * (obj.move.w - obj.move.s) * ops.s;
+      obj.x = obj.x - s * (obj.move.a - obj.move.d) * ops.s;
+      border.limit(obj);
+      $(obj.e).css({
+        top: battleBox.height / 2 + obj.y - obj.size / 2,
+        left: battleBox.width / 2 + obj.x - obj.size / 2
+      });
+    }
+    function next() {
+      console.log(enermy.onskill.length)
+      ops.lastTimer = ops.l + ops.check;
+      Interval.add('check', check, ops.check);
+      danmaku.on.clear(enermy, enermy.onskill[0]);
+      if (enermy.onskill.length > 1) {
+        enermy.onskill.splice(0, 1);
+      }
+      else {
+        enermy.onskill = ['first', 'second', 'third', 'forth'];
+      }
+      setTimeout(_ => danmaku.on.active(enermy, enermy.onskill[0]), 2000);
+    }
+
+    $.getScript('/js/da-style.js', _ => {
+      alert('WASD或上下左右移动，按住shift进入低速模式。');
+      initialization();
+    });
+  </script>
+
+</body>
+
+</html>
