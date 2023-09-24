@@ -49,3 +49,8 @@ div {
 	font-family: SanJiSuXianJianTi;
 	src: url("/font/SanJiSuXianJianTi-2.ttf");
 }
+
+@font-face {
+	font-family: GloriaHallelujah;
+	src: url("/font/GloriaHallelujah-Regular.ttf");
+}
