@@ -1,0 +1,418 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('/icon/icomoon.eot?75bsf5');
+  src:  url('/icon/icomoon.eot?75bsf5#iefix') format('embedded-opentype'),
+    url('/icon/icomoon.ttf?75bsf5') format('truetype'),
+    url('/icon/icomoon.woff?75bsf5') format('woff'),
+    url('/icon/icomoon.svg?75bsf5#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-a0"]:before, [class*=" icon-a0"]:before {
+  content: "?";
+}
+
+.icon-alice:before {
+  content: "\e900";
+}
+.icon-artful_sacrifice:before {
+  content: "\e901";
+}
+.icon-Asteroid_Belt:before {
+  content: "\e902";
+}
+.icon-Bright_Bitter_Wheel:before {
+  content: "\e903";
+}
+.icon-bury_in_lake:before {
+  content: "\e904";
+}
+.icon-Centered_Flow:before {
+  content: "\e905";
+}
+.icon-Earth_Light_Ray:before {
+  content: "\e906";
+}
+.icon-emerald_megalopolis:before {
+  content: "\e907";
+}
+.icon-Future_Never_Survive:before {
+  content: "\e908";
+}
+.icon-Graciousness_Maze:before {
+  content: "\e909";
+}
+.icon-holland_doll:before {
+  content: "\e90a";
+}
+.icon-jellyfish_princess:before {
+  content: "\e90b";
+}
+.icon-kyoto_doll:before {
+  content: "\e90c";
+}
+.icon-little_legion:before {
+  content: "\e90d";
+}
+.icon-london_doll:before {
+  content: "\e90e";
+}
+.icon-marisa:before {
+  content: "\e90f";
+}
+.icon-Master_Spark:before {
+  content: "\e910";
+}
+.icon-orleans_doll:before {
+  content: "\e911";
+}
+.icon-Orrerys_Sun:before {
+  content: "\e912";
+}
+.icon-pachi:before {
+  content: "\e913";
+}
+.icon-penglai_doll:before {
+  content: "\e914";
+}
+.icon-philosophers_stone:before {
+  content: "\e94f";
+}
+.icon-return_inanimateness:before {
+  content: "\e916";
+}
+.icon-royal_lare:before {
+  content: "\e917";
+}
+.icon-russia_doll:before {
+  content: "\e918";
+}
+.icon-shanghai_doll:before {
+  content: "\e919";
+}
+.icon-silent_selene:before {
+  content: "\e91a";
+}
+.icon-silver_dragon:before {
+  content: "\e91b";
+}
+.icon-Six_Roots_Clean:before {
+  content: "\e91c";
+}
+.icon-Stardust_Reverie:before {
+  content: "\e91d";
+}
+.icon-sylphy_horn:before {
+  content: "\e91e";
+}
+.icon-xizang_doll:before {
+  content: "\e91f";
+}
+.icon-youmu:before {
+  content: "\e920";
+}
+.icon-ahabs_opinion:before {
+  content: "\e921";
+}
+.icon-microlithic_fish:before {
+  content: "\e922";
+}
+.icon-mimicry_cat_pendant:before {
+  content: "\e923";
+}
+.icon-miyanos_bottle:before {
+  content: "\e924";
+}
+.icon-nodas_hat:before {
+  content: "\e925";
+}
+.icon-wanderlust:before {
+  content: "\e926";
+}
+.icon-circular_fan:before {
+  content: "\e927";
+}
+.icon-empty:before {
+  content: "\e928";
+}
+.icon-gongonier:before {
+  content: "\e929";
+}
+.icon-hd_camera:before {
+  content: "\e92a";
+}
+.icon-louguanjian:before {
+  content: "\e92b";
+}
+.icon-mini_bagua_stove:before {
+  content: "\e92c";
+}
+.icon-mirror_of_pear:before {
+  content: "\e92d";
+}
+.icon-repentance_rod:before {
+  content: "\e92e";
+}
+.icon-sunshade:before {
+  content: "\e92f";
+}
+.icon-sword_of_feixiang:before {
+  content: "\e930";
+}
+.icon-banana:before {
+  content: "\e931";
+}
+.icon-doubtful_potion:before {
+  content: "\e932";
+}
+.icon-gift_from_ergen:before {
+  content: "\e933";
+}
+.icon-good_corn:before {
+  content: "\e934";
+}
+.icon-heart_fire_of_grace:before {
+  content: "\e935";
+}
+.icon-amulet_of_full_moon:before {
+  content: "\e936";
+}
+.icon-bird_wine:before {
+  content: "\e937";
+}
+.icon-blade_of_yellow_spring:before {
+  content: "\e938";
+}
+.icon-blood_book:before {
+  content: "\e939";
+}
+.icon-bottle_of_stars:before {
+  content: "\e93a";
+}
+.icon-bronze_mirror:before {
+  content: "\e93b";
+}
+.icon-burning_seashore_flower:before {
+  content: "\e93c";
+}
+.icon-cherry:before {
+  content: "\e93d";
+}
+.icon-compass_cat:before {
+  content: "\e93e";
+}
+.icon-conch_shell:before {
+  content: "\e93f";
+}
+.icon-corvis_feathers:before {
+  content: "\e940";
+}
+.icon-crown_of_thorns:before {
+  content: "\e941";
+}
+.icon-crypto_cloak:before {
+  content: "\e942";
+}
+.icon-cursed_wind_chimes:before {
+  content: "\e943";
+}
+.icon-dimensional_pocket:before {
+  content: "\e944";
+}
+.icon-earthy_spider_wine:before {
+  content: "\e945";
+}
+.icon-fish_stone:before {
+  content: "\e946";
+}
+.icon-fluorescent_zanthoxylum:before {
+  content: "\e947";
+}
+.icon-fox_jade:before {
+  content: "\e948";
+}
+.icon-frozen_frog:before {
+  content: "\e949";
+}
+.icon-ghost_lantern:before {
+  content: "\e94a";
+}
+.icon-human_soul_lamp:before {
+  content: "\e94b";
+}
+.icon-large_roll_of_bandages:before {
+  content: "\e94c";
+}
+.icon-magic_dart:before {
+  content: "\e94d";
+}
+.icon-mimosa:before {
+  content: "\e94e";
+}
+.icon-normal_stone:before {
+  content: "\e915";
+}
+.icon-patchoulis_ribbon:before {
+  content: "\e950";
+}
+.icon-pickled_radish:before {
+  content: "\e951";
+}
+.icon-portable_money_box:before {
+  content: "\e952";
+}
+.icon-red_and_white_scarf:before {
+  content: "\e953";
+}
+.icon-seal_needle:before {
+  content: "\e954";
+}
+.icon-shy_rabbit:before {
+  content: "\e955";
+}
+.icon-skyrocket:before {
+  content: "\e956";
+}
+.icon-sundial:before {
+  content: "\e957";
+}
+.icon-terrible_ring:before {
+  content: "\e958";
+}
+.icon-vampires_old_tooth:before {
+  content: "\e959";
+}
+.icon-barrier:before {
+  content: "\e95a";
+}
+.icon-bleed:before {
+  content: "\e95b";
+}
+.icon-Bright_Bitter_Wheel1:before {
+  content: "\e95c";
+}
+.icon-burning:before {
+  content: "\e95d";
+}
+.icon-cursed_wind:before {
+  content: "\e95e";
+}
+.icon-flow:before {
+  content: "\e95f";
+}
+.icon-foresee:before {
+  content: "\e960";
+}
+.icon-hypodynamic:before {
+  content: "\e961";
+}
+.icon-in_treatment:before {
+  content: "\e962";
+}
+.icon-interim_barrier:before {
+  content: "\e963";
+}
+.icon-meditation_slash:before {
+  content: "\e964";
+}
+.icon-Orrerys_Sun1:before {
+  content: "\e965";
+}
+.icon-prophesy:before {
+  content: "\e966";
+}
+.icon-seal_needle1:before {
+  content: "\e967";
+}
+.icon-star:before {
+  content: "\e968";
+}
+.icon-strength_of_wine:before {
+  content: "\e969";
+}
+.icon-tardy:before {
+  content: "\e96a";
+}
+.icon-telepathism:before {
+  content: "\e96b";
+}
+.icon-tired:before {
+  content: "\e96c";
+}
+.icon-yanfan:before {
+  content: "\e96d";
+}
+.icon-aim:before {
+  content: "\e96e";
+}
+.icon-attack:before {
+  content: "\e96f";
+}
+.icon-back:before {
+  content: "\e970";
+}
+.icon-chance:before {
+  content: "\e971";
+}
+.icon-coin:before {
+  content: "\e972";
+}
+.icon-consumables:before {
+  content: "\e973";
+}
+.icon-data:before {
+  content: "\e974";
+}
+.icon-equipment:before {
+  content: "\e975";
+}
+.icon-health:before {
+  content: "\e976";
+}
+.icon-level:before {
+  content: "\e977";
+}
+.icon-logo:before {
+  content: "\e978";
+  color: #f00;
+}
+.icon-maxHealth:before {
+  content: "\e979";
+}
+.icon-outRound:before {
+  content: "\e97a";
+  color: #777;
+}
+.icon-power:before {
+  content: "\e97b";
+}
+.icon-select:before {
+  content: "\e97c";
+}
+.icon-speed:before {
+  content: "\e97d";
+}
+.icon-star1:before {
+  content: "\e97e";
+  color: #ffff9b;
+}
+.icon-sugar:before {
+  content: "\e97f";
+}

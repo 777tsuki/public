@@ -36,21 +36,21 @@ div {
 }
 
 @font-face {
-	font-family: TiejiliSC;
+	font-family: title;
 	src: url("/font/TiejiliSC-Regular.otf");
 }
 
 @font-face {
-	font-family: seto;
-	src: url("/font/seto.woff2");
+	font-family: remark;
+	src: url("/font/LXGWMarkerGothic-Regular.ttf");
 }
 
 @font-face {
-	font-family: SanJiSuXianJianTi;
+	font-family: normal;
 	src: url("/font/SanJiSuXianJianTi-2.ttf");
 }
 
 @font-face {
-	font-family: GloriaHallelujah;
+	font-family: write;
 	src: url("/font/GloriaHallelujah-Regular.ttf");
 }
