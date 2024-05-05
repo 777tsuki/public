@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+	<meta charset='utf-8'>
+	<title>幻想异闻录</title>
+	<link rel='icon' type='image/png' href='/logo.svg'>
+	<link rel='stylesheet' href='/global.css'>
+	<link rel='stylesheet' href='/build/icon/icon.css'>
+	<link rel='stylesheet' href='/build/bundle.css'>
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Cache" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<style>
+		#blank {
+			background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+			width: 100vw;
+			height: 100vh;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			z-index: 10;
+			transition: 1s;
+		}
+
+		#blank-icon {
+			position: absolute;
+			right: 10px;
+			bottom: 10px;
+			width: 50px;
+			height: 50px;
+			background-image: url('/logo.svg');
+			transform: rotateY(0deg);
+			animation: loading 2s infinite;
+			z-index: 12;
+		}
+
+		.hiddenBlank {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		@keyframes loading {
+			0% {
+				transform: rotateY(0deg);
+			}
+
+			30% {
+				transform: rotateY(0deg);
+			}
+
+			50% {
+				transform: rotateY(180deg);
+			}
+
+			80% {
+				transform: rotateY(180deg);
+			}
+
+			100% {
+				transform: rotateY(0deg);
+			}
+		}
+	</style>
+	<script defer src='/build/bundle.js'></script>
+</head>
+
+<body>
+	<div id="blank">
+		<div id="blank-icon"></div>
+	</div>
+	<script>
+		window.onload = _ => document.getElementById('blank').classList = "hiddenBlank";
+	</script>
+</body>
+
+</html>
