@@ -971,7 +971,7 @@ var app = (function () {
         return { set, update, subscribe };
     }
 
-    const page = writable('Explore');
+    const page = writable('Index');
     const ctrl = writable({});
     const Explain = writable(false);
     const archive = writable({
